@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   
+  body {
+    background: ${(props) => props.theme['background']};
+  }
+
   h1, h2 {
     font-family: 'Balon 2', sans-serif;
   }
