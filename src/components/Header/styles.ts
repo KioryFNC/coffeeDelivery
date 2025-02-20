@@ -10,6 +10,7 @@ export const Root = styled.div`
 `
 
 export const Logo = styled.div`
+  display: flex;
 `
 
 export const Actions = styled.div`

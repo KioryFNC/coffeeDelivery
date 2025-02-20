@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2 {
-    font-family: 'Balon 2', sans-serif;
+    font-family: 'Baloo 2', sans-serif;
   }
 
   p, span, input {
