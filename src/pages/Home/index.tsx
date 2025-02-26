@@ -1,5 +1,5 @@
 import * as Element from "./styles"
-import coffeeBanner from "../../assets/Coffee.png" 
+import coffeeBanner from "../../assets/CoffeeLogo.png" 
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 
 export function Home() {

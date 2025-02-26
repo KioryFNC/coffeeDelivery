@@ -36,6 +36,12 @@ export const Title = styled.div`
     line-height: 130%;
     color: ${(props) => props.theme['base-subtitle']};
   }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
 `
 
 export const Items = styled.div`
