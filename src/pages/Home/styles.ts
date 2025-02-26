@@ -11,6 +11,7 @@ export const Banner = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5.6rem;
+  margin-bottom: 9.2rem;
 `
 
 export const BannerText = styled.div`
@@ -98,5 +99,23 @@ export const Items = styled.div`
       border-radius: 50%;
       background: ${(props) => props.theme['purple']};
     }
+  }
+`
+
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5.4rem;
+  margin-top: 3.2rem;
+
+  h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 3.2rem;
+    line-height: 130%;
+    color: ${(props) => props.theme['base-subtitle']};
   }
 `

@@ -19,7 +19,7 @@ export function Card({ image, tags, title, description, price}: CardProps) {
       </Element.Tags>
       <Element.Title>{title}</Element.Title>
       <Element.Description>{description}</Element.Description>
-      <Element.Price>R$ {price.toFixed(2)}</Element.Price>
+      <Element.Price>R$ <span>{price.toFixed(2)}</span></Element.Price>
     </Element.Root>
   )
 }

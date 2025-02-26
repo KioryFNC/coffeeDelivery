@@ -1,6 +1,7 @@
 import * as Element from "./styles"
 import coffeeBanner from "../../assets/CoffeeLogo.png" 
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
+import { Card } from "../../components/Card"
 
 export function Home() {
   return (
@@ -20,6 +21,16 @@ export function Home() {
         </Element.BannerText>
         <img src={coffeeBanner} alt="Coffee Delivery" />
       </Element.Banner>
+      <Element.Content>
+        <h2>Nossos cafés</h2>
+        <Card 
+          image="/src/assets/CoffeeExpresso.png"
+          tags={["Tradicional"]}
+          title="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          price={9.90}
+        />
+      </Element.Content>
     </Element.Root>
   )
 }
