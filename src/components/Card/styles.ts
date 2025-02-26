@@ -53,6 +53,13 @@ export const Description = styled.p`
   color: ${(props) => props.theme['base-label']};
   margin-bottom: 3.3rem;
 `
+
+export const Value = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 export const Price = styled.span`
   font-size: 1.4rem;
   line-height: 130%;
