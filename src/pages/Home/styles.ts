@@ -119,3 +119,25 @@ export const Content = styled.div`
     color: ${(props) => props.theme['base-subtitle']};
   }
 `
+
+export const Cards = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem;
+  justify-content: start;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 8rem;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 4rem;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 2rem;
+  }
+`
