@@ -80,6 +80,7 @@ export const Price = styled.span`
   line-height: 130%;
   color: ${(props) => props.theme['base-text']};
   text-align: right;
+  white-space: nowrap;
   > span {
     font-family: 'Baloo 2', sans-serif;
     font-size: 2.4rem;
