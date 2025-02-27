@@ -25,6 +25,12 @@ export const Button = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   }
+  &:hover {
+    scale: 1.1;
+  }
+  &:active {
+    scale: .95;
+  }
 `
 
 export const Quantity = styled.span`

@@ -13,10 +13,10 @@ export function Home() {
             <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
           </Element.Title>
           <Element.Items>
-            <span><div><ShoppingCart/> </div> Compra simples e segura</span>
-            <span><div><Package/> </div> Embalagem mantém o café intacto</span>
-            <span><div><Timer/> </div> Entrega rápida e rastreada</span>
-            <span><div><Coffee/> </div> O café chega fresquinho até você</span>
+            <span><div><ShoppingCart color='white' weight='fill'/> </div> Compra simples e segura</span>
+            <span><div><Package color='white' weight='fill'/> </div> Embalagem mantém o café intacto</span>
+            <span><div><Timer color='white' weight='fill'/> </div> Entrega rápida e rastreada</span>
+            <span><div><Coffee color='white' weight='fill'/> </div> O café chega fresquinho até você</span>
           </Element.Items>
         </Element.BannerText>
         <img src={coffeeBanner} alt="Coffee Delivery" />

@@ -1,3 +1,4 @@
+import { ShoppingCart } from 'phosphor-react';
 import { ButtonAdd } from '../ButtonAdd';
 import * as Element from './styles'
 
@@ -21,9 +22,11 @@ export function Card({ image, tags, title, description, price}: CardProps) {
       <Element.Title>{title}</Element.Title>
       <Element.Description>{description}</Element.Description>
       <Element.Value>
-      <Element.Price>R$ <span>{price.toFixed(2)}</span></Element.Price>
-      <ButtonAdd />
-      
+        <Element.Price>R$ <span>{price.toFixed(2)}</span></Element.Price>
+        <ButtonAdd />
+        <div>
+          <ShoppingCart color='white' weight='fill'/>
+        </div>
       </Element.Value>
     </Element.Root>
   )
