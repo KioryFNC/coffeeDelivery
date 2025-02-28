@@ -49,6 +49,7 @@ export const Items = styled.div`
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 2rem 4rem;
+  justify-content: start;
   
   span {
     display: flex;
