@@ -110,7 +110,68 @@ export const Form = styled.div`
   }
 `;
 
+export const Payment = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+  padding: 4rem;
+  border-radius: 6px;
+  background: ${(props) => props.theme['base-card']};
+`
 
+export const PaymentHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  > svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  > div h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: ${(props) => props.theme['base-subtitle']};
+  }
+  
+  > div p {
+    font-size: 1.4rem;
+    line-height: 130%;
+    color: ${(props) => props.theme['base-text']};
+  }
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+
+  > button {
+    flex: 1;
+    height: 5.1rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 160%;
+    white-space: nowrap;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    border-radius: 6px;
+    border: none;
+    color: ${(props) => props.theme['base-text']};
+    background: ${(props) => props.theme['base-button']};
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+`
 
 
 export const Order = styled.div`

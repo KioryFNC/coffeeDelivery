@@ -1,4 +1,4 @@
-import { MapPinLine } from 'phosphor-react'
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react'
 import * as Element from './styles'
 import { useTheme } from 'styled-components'
 
@@ -8,7 +8,6 @@ export function Checkout() {
     <Element.Root>
       <Element.Section>
         <h2>Complete seu pedido</h2>
-
         <Element.Address>
         <Element.AddressHeader>
           <MapPinLine color={theme['yellow-dark']} />
@@ -31,9 +30,23 @@ export function Checkout() {
           </div>
         </Element.Form>
         </Element.Address>
+
+        <Element.Payment>
+          <Element.PaymentHeader>
+            <CurrencyDollar color={theme['purple']}/>
+            <div>
+              <h3>Pagamento</h3>
+              <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+            </div>
+          </Element.PaymentHeader>
+          <Element.Buttons>
+            <button><CreditCard color={theme['purple']}/> Cartão de crédito</button>
+            <button><Bank color={theme['purple']}/> cartão de débito</button>
+            <button><Money color={theme['purple']}/> dinheiro</button>
+          </Element.Buttons>
+        </Element.Payment>
       </Element.Section>
       <Element.Order>
-
       </Element.Order>
     </Element.Root>
   )
