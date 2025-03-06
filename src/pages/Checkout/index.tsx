@@ -1,4 +1,4 @@
-import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react'
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Minus, Money, Plus, Trash } from 'phosphor-react'
 import * as Element from './styles'
 import { useTheme } from 'styled-components'
 
@@ -46,18 +46,60 @@ export function Checkout() {
           </Element.Buttons>
         </Element.Payment>
       </Element.Section>
+      
       <Element.Order>
         <h2>Cafés selecionados</h2>
         <Element.ConfirmOrder>
           <Element.CardDetails>
-            <p>card</p>
+
+            {/* Cafe 1 */}
+            <Element.CoffeeItem>
+              <img src="/src/assets/CoffeeExpresso.png" alt="" />
+              <div className='details'>
+                <h4>Expresso Tradicional</h4>
+                <div className='actions'>
+                  <Element.QuantityControl>
+                    <button><Minus weight='bold'/></button>
+                    <span>1</span>
+                    <button><Plus weight='bold'/></button>
+                  </Element.QuantityControl>
+                  <Element.RemoveButton>
+                    <Trash />
+                    Remover
+                  </Element.RemoveButton>
+                </div>
+              </div>
+              <span className='price'>R$ 9,90</span>
+            </Element.CoffeeItem>
+
+            {/* Cafe 2 */}
+            <Element.CoffeeItem>
+              <img src="/src/assets/CoffeeLatte.png" alt="" />
+              <div className='details'>
+                <h4>Latte</h4>
+                <div className='actions'>
+                  <Element.QuantityControl>
+                    <button><Minus weight='bold'/></button>
+                    <span>1</span>
+                    <button><Plus weight='bold'/></button>
+                  </Element.QuantityControl>
+                  <Element.RemoveButton>
+                    <Trash />
+                    Remover
+                  </Element.RemoveButton>
+                </div>
+              </div>
+              <span className='price'>R$ 9,90</span>
+            </Element.CoffeeItem>
           </Element.CardDetails>
           <Element.PriceOrder>
-            <span>Total de itens</span>
-            <span>Entrega</span>
-            <strong>Total</strong>
+            <span>Total de itens <span>R$ 29,70</span></span>
+            <span>Entrega <span>R$ 3,50</span></span>
+            <strong>Total <strong>R$ 33,20</strong></strong>
           </Element.PriceOrder>
-          <button>Confirmar Pedido</button>
+          <Element.ConfirmButton>
+            Confirmar Pedido
+          </Element.ConfirmButton>
         </Element.ConfirmOrder>
       </Element.Order>
     </Element.Root>
