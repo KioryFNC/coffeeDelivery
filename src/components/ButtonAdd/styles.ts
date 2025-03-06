@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   display: flex;
-  height: 38px;
+  height: auto;
   padding: 8px;
   justify-content: center;
   align-items: center;

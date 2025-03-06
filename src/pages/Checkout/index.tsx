@@ -77,19 +77,19 @@ export function Checkout() {
               <img src="/src/assets/CoffeeLatte.png" alt="" />
               <div className='details'>
                 <h4>Latte</h4>
-                <div className='actions'>
-                  <Element.QuantityControl>
-                    <button><Minus weight='bold'/></button>
-                    <span>1</span>
-                    <button><Plus weight='bold'/></button>
-                  </Element.QuantityControl>
-                  <Element.RemoveButton>
-                    <Trash />
-                    Remover
-                  </Element.RemoveButton>
+                  <div className='actions'>
+                    <Element.QuantityControl>
+                      <button><Minus weight='bold'/></button>
+                      <span>1</span>
+                      <button><Plus weight='bold'/></button>
+                    </Element.QuantityControl>
+                    <Element.RemoveButton>
+                      <Trash />
+                      Remover
+                    </Element.RemoveButton>
+                  </div>
                 </div>
-              </div>
-              <span className='price'>R$ 9,90</span>
+                <span className='price'>R$ 9,90</span>
             </Element.CoffeeItem>
           </Element.CardDetails>
           <Element.PriceOrder>

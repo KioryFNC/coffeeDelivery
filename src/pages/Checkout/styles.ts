@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 3.2rem;
 `
@@ -217,26 +217,29 @@ export const CoffeeItem = styled.div`
   gap: 1.6rem;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid ${(props) => props.theme['base-button']};
-
+  
   img {
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
   }
-
+  
   .details {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: .8rem;
   }
-
+  
   h4 {
     font-size: 1.6rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
     color: ${(props) => props.theme['base-subtitle']};
   }
 
   .actions {
+
     display: flex;
     align-items: center;
     gap: .8rem;
@@ -298,10 +301,12 @@ export const RemoveButton = styled.button`
 `
 
 export const PriceOrder = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
   line-height: 130%;
-  gap: .8rem;
+  gap: 1.5rem;
 
   span {
     display: flex;
@@ -320,9 +325,12 @@ export const PriceOrder = styled.div`
 
 export const ConfirmButton = styled.button`
   width: 100%;
+  height: 4.6rem;
   padding: 1.2rem;
   font-size: 1.4rem;
+  line-height: 160%;
   font-weight: 700;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   color: ${(props) => props.theme['white']};
   cursor: pointer;
