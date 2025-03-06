@@ -177,3 +177,12 @@ export const Buttons = styled.div`
 export const Order = styled.div`
 
 `
+export const ConfirmOrder = styled.div`
+
+`
+export const CardDetails = styled.div`
+
+`
+export const PriceOrder = styled.div`
+
+`

@@ -47,6 +47,18 @@ export function Checkout() {
         </Element.Payment>
       </Element.Section>
       <Element.Order>
+        <h2>Cafés selecionados</h2>
+        <Element.ConfirmOrder>
+          <Element.CardDetails>
+            <p>card</p>
+          </Element.CardDetails>
+          <Element.PriceOrder>
+            <span>Total de itens</span>
+            <span>Entrega</span>
+            <strong>Total</strong>
+          </Element.PriceOrder>
+          <button>Confirmar Pedido</button>
+        </Element.ConfirmOrder>
       </Element.Order>
     </Element.Root>
   )
