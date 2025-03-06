@@ -80,13 +80,15 @@ export const QuantityAndCart = styled.div`
   display: flex;
   gap: .8rem;
   
-  div:last-child {
+  button.cart-button {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: .8rem;
     border-radius: 6px;
     background: ${(props) => props.theme['purple-dark']};
+    border: none;
+    cursor: pointer;
     svg {
       width: 2.2rem;
       height: 2.2rem;

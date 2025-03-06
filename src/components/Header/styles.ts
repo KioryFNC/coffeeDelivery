@@ -48,3 +48,19 @@ export const Actions = styled.div`
     }
   }
 `
+
+export const CartBadge = styled.span`
+  position: absolute;
+  top: -.8rem;
+  right: -.8rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50%;
+  color: white;
+  background: ${(props) => props.theme['yellow-dark']};
+`

@@ -3,9 +3,12 @@ import { Logo } from '../../assets/Logo'
 import * as Element from './styles'
 import { useTheme } from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 
 export function Header() {
   const theme = useTheme()
+  const { cartQuantity } = useContext(CartContext)
   
   return (
     <Element.Root>
@@ -15,8 +18,11 @@ export function Header() {
 
       <Element.Actions>
         <span><MapPin /> Porto Alegre, RS</span>
-        <NavLink to='/carrinho'>
+        <NavLink to='/carrinho' style={{ position: 'relative'}}>
           <ShoppingCart color={theme['yellow-dark']} weight='fill'/>
+          {cartQuantity > 0 && (
+            <Element.CartBadge>{cartQuantity}</Element.CartBadge>
+          )}
         </NavLink>
       </Element.Actions>
     </Element.Root>

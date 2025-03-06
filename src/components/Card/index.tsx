@@ -1,9 +1,11 @@
+import { useContext, useState } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import { ShoppingCart } from 'phosphor-react';
 import { ButtonAdd } from '../ButtonAdd';
 import * as Element from './styles'
-import { useState } from 'react';
 
 interface CardProps {
+  id: string;
   image: string;
   tags: string[];
   title: string;
@@ -11,16 +13,13 @@ interface CardProps {
   price: number;
 }
 
-export function Card({ image, tags, title, description, price}: CardProps) {
+export function Card({ id, image, tags, title, description, price}: CardProps) {
   const [quantity, setQuantity] = useState(1)
-  
-    const decrement = () => {
-      setQuantity((prev) => Math.max (1, prev - 1))
-    }
-  
-    const increment = () => {
-      setQuantity((prev) => prev + 1)
-    }
+  const { addToCart } = useContext(CartContext)
+
+  function handleAddToCart() {
+    addToCart({ id, image, title, price, quantity })
+  }
     
   return (
     <Element.Root>
@@ -35,10 +34,14 @@ export function Card({ image, tags, title, description, price}: CardProps) {
       <Element.Value>
         <Element.Price>R$ <span>{(price * quantity).toFixed(2)}</span></Element.Price>
         <Element.QuantityAndCart>
-          <ButtonAdd quantity={quantity} increment={increment} decrement={decrement}/>
-          <div>
-            <ShoppingCart color='white' weight='fill'/>
-          </div>
+          <ButtonAdd 
+            quantity={quantity} 
+            increment={() => setQuantity(quantity + 1)} 
+            decrement={() => setQuantity(Math.max(1, quantity - 1))} 
+          />
+            <button className='cart-button' onClick={handleAddToCart}>
+              <ShoppingCart color='white' weight='fill'/>
+            </button>
         </Element.QuantityAndCart>
       </Element.Value>
     </Element.Root>
