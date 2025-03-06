@@ -19,6 +19,7 @@ export const Actions = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
+
   span {
     display: flex;
     align-items: center;
@@ -28,6 +29,7 @@ export const Actions = styled.div`
     color: ${(props) => props.theme['purple-dark']};
     border-radius: 6px;
     background: ${(props) => props.theme['purple-light']};
+    
     svg {
       width: 2.2rem;
       height: 2.2rem;

@@ -34,10 +34,12 @@ export function Card({ image, tags, title, description, price}: CardProps) {
       <Element.Description>{description}</Element.Description>
       <Element.Value>
         <Element.Price>R$ <span>{(price * quantity).toFixed(2)}</span></Element.Price>
-        <ButtonAdd quantity={quantity} increment={increment} decrement={decrement}/>
-        <div>
-          <ShoppingCart color='white' weight='fill'/>
-        </div>
+        <Element.QuantityAndCart>
+          <ButtonAdd quantity={quantity} increment={increment} decrement={decrement}/>
+          <div>
+            <ShoppingCart color='white' weight='fill'/>
+          </div>
+        </Element.QuantityAndCart>
       </Element.Value>
     </Element.Root>
   )

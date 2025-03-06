@@ -55,24 +55,12 @@ export const Description = styled.p`
 `
 
 export const Value = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
-  gap: 1.5rem;
-
-  div:last-child {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .8rem;
-    border-radius: 6px;
-    background: ${(props) => props.theme['purple-dark']};
-    svg {
-      width: 2.2rem;
-      height: 2.2rem;
-    }
-  }
+  
 `
 
 export const Price = styled.span`
@@ -87,3 +75,21 @@ export const Price = styled.span`
     font-weight: 800;
   }
 `
+
+export const QuantityAndCart = styled.div`
+  display: flex;
+  gap: .8rem;
+  
+  div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    border-radius: 6px;
+    background: ${(props) => props.theme['purple-dark']};
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    }
+` 
