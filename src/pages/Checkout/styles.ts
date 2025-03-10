@@ -164,6 +164,7 @@ export const Buttons = styled.div`
     padding: 1.6rem;
     border-radius: 6px;
     border: none;
+    cursor: pointer;
     color: ${(props) => props.theme['base-text']};
     background: ${(props) => props.theme['base-button']};
     transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -199,8 +200,9 @@ export const Order = styled.div`
   }
 `
 export const ConfirmOrder = styled.div`
+  position: relative;
   width: 44.8rem;
-  height: auto;
+  height: 50rem;
   display: flex;
   padding: 4rem;
   flex-direction: column;
@@ -208,12 +210,14 @@ export const ConfirmOrder = styled.div`
   gap: 2.4rem;
   border-radius: 6px 44px;
   background: ${(props) => props.theme['base-card']};
+  overflow: hidden;
 `
-export const CardDetails = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+
+export const CoffeeList = styled.div`
+  flex: 1;
+  max-height: 30rem;
+  overflow-y: auto;
+  padding-right: .8rem;
 `
 
 export const CoffeeItem = styled.div`
@@ -224,17 +228,14 @@ export const CoffeeItem = styled.div`
   padding-bottom: 2.4rem;
   border-bottom: 1px solid ${(props) => props.theme['base-button']};
   
+  &:last-child {
+    border-bottom: none;
+  }
+
   img {
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
-  }
-  
-  .details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
   }
   
   h4 {
@@ -242,6 +243,13 @@ export const CoffeeItem = styled.div`
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
   }
 
   .actions {
@@ -267,14 +275,22 @@ export const QuantityControl = styled.div`
   gap: .8rem;
 
   button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: ${(props) => props.theme["purple"]};
-    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    color: ${(props) => props.theme["purple"]};
+    background: transparent;
+
+    &:hover {
+      transform: scale(.95);
+    }
+    
+    &:active {
+      transform: scale(1.1);
+    }
   }
 
   span {
@@ -326,6 +342,7 @@ export const PriceOrder = styled.div`
     font-size: 1.4rem;
     color: ${(props) => props.theme['base-text']};
   }
+
   strong {
     display: flex;
     justify-content: space-between;

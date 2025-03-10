@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 
+
 export function Checkout() {
   const theme = useTheme()
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext)
@@ -78,32 +79,44 @@ export function Checkout() {
       <Element.Order>
         <h2>Cafés selecionados</h2>
         <Element.ConfirmOrder>
-          {cart.map((item) => (
-            <Element.CoffeeItem key={item.id}>
-              <img src={item.image} alt={item.title} />
-              <div className='details'>
-                <h4>{item.title}</h4>
-                <div className='actions'>
-                  <Element.QuantityControl>
-                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)}><Minus weight='bold'/></button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)}><Plus weight='bold'/></button>
-                  </Element.QuantityControl>
-                  <Element.RemoveButton onClick={() => removeFromCart(item.id)}>
-                    <Trash />
-                    Remover
-                  </Element.RemoveButton>
+          <Element.CoffeeList>
+            {cart.map((item) => (
+              <Element.CoffeeItem key={item.id}>
+                <img src={item.image} alt={item.title} />
+                <div className='details'>
+                  <h4>{item.title}</h4>
+                  <div className='actions'>
+                    <Element.QuantityControl>
+                      <button 
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        disabled={item.quantity === 1}
+                      >
+                        <Minus weight='bold'/>
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button 
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      >
+                        <Plus weight='bold'/>
+                      </button>
+                    </Element.QuantityControl>
+                    <Element.RemoveButton onClick={() => removeFromCart(item.id)}>
+                      <Trash />
+                      Remover
+                    </Element.RemoveButton>
+                  </div>
                 </div>
-              </div>
-              <span className='price'>R$ {(item.price * item.quantity).toFixed(2)}</span>
-            </Element.CoffeeItem>
-          ))}
+                <span className='price'>R$ {(item.price * item.quantity).toFixed(2)}</span>
+              </Element.CoffeeItem>
+            ))}
+          </Element.CoffeeList>
             
           <Element.PriceOrder>
             <span>Total de itens <span>R$ {subTotal.toFixed(2)}</span></span>
             <span>Entrega <span>R$ {deliveryFee.toFixed(2)}</span></span>
             <strong>Total <strong>R$ {total.toFixed(2)}</strong></strong>
           </Element.PriceOrder>
+
           <Element.ConfirmButton>
             Confirmar Pedido
           </Element.ConfirmButton>

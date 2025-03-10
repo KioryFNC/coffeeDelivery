@@ -89,9 +89,19 @@ export const QuantityAndCart = styled.div`
     background: ${(props) => props.theme['purple-dark']};
     border: none;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
     svg {
       width: 2.2rem;
       height: 2.2rem;
     }
+
+    &:hover {
+      transform: scale(.95);
     }
+    
+    &:active {
+      transform: scale(1.05);
+    }
+  }
 ` 
