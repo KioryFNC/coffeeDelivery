@@ -20,8 +20,6 @@ export const Actions = styled.div`
   justify-content: center;
   gap: 1.2rem;
 
-  
-
   span {
     display: flex;
     align-items: center;
