@@ -6,16 +6,16 @@ interface CartProviderProps {
 }
 
 interface CartItem {
-  id: string;
-  image: string;
-  title: string;
-  price: number;
-  quantity: number;
+  id: string
+  image: string
+  title: string
+  price: number
+  quantity: number
 }
 
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([])
 
   function addToCart(item: CartItem) {
     setCart((prevCart) => {

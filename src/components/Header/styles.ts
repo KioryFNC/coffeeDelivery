@@ -20,6 +20,8 @@ export const Actions = styled.div`
   justify-content: center;
   gap: 1.2rem;
 
+  
+
   span {
     display: flex;
     align-items: center;
@@ -42,6 +44,11 @@ export const Actions = styled.div`
     padding: .8rem;
     border-radius: 6px;
     background: ${(props) => props.theme['yellow-light']};
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
     svg {
       width: 2.2rem;
       height: 2.2rem;
@@ -51,16 +58,20 @@ export const Actions = styled.div`
 
 export const CartBadge = styled.span`
   position: absolute;
-  top: -.8rem;
-  right: -.8rem;
+  top: -1rem;
+  right: -1rem;
   width: 2rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  padding: 1.2rem !important;
+  font-size: 1.2rem !important;
   font-weight: 700;
-  border-radius: 50%;
-  color: white;
-  background: ${(props) => props.theme['yellow-dark']};
+  border-radius: 50% !important;
+  color: white !important;
+  background: ${(props) => props.theme['yellow-dark']} !important;
+  cursor: pointer;
+
+  
 `

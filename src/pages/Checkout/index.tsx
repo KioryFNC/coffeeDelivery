@@ -1,12 +1,17 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Minus, Money, Plus, Trash } from 'phosphor-react'
 import * as Element from './styles'
 import { useTheme } from 'styled-components'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 
 export function Checkout() {
   const theme = useTheme()
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext)
+  const [selected, setSelected] = useState<string | null>(null)
+
+  function handleSelectPayment(method:string) {
+    setSelected(method)
+  }
 
   return (
     <Element.Root>
@@ -44,9 +49,24 @@ export function Checkout() {
             </div>
           </Element.PaymentHeader>
           <Element.Buttons>
-            <button><CreditCard color={theme['purple']}/> Cartão de crédito</button>
-            <button><Bank color={theme['purple']}/> cartão de débito</button>
-            <button><Money color={theme['purple']}/> dinheiro</button>
+            <button
+              onClick={() => handleSelectPayment('credit')}
+              className={selected === 'credit' ? 'active' : ''}
+            >
+              <CreditCard color={theme['purple']}/> Cartão de crédito
+            </button>
+            <button
+              onClick={() => handleSelectPayment('debit')}
+              className={selected === 'debit' ? 'active' : ''}
+            >
+              <Bank color={theme['purple']}/> cartão de débito
+            </button>
+            <button
+              onClick={() => handleSelectPayment('cash')}
+              className={selected === 'cash' ? 'active' : ''}
+            >
+              <Money color={theme['purple']}/> dinheiro
+            </button>
           </Element.Buttons>
         </Element.Payment>
       </Element.Section>

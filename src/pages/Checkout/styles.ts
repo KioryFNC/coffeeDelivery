@@ -166,7 +166,7 @@ export const Buttons = styled.div`
     border: none;
     color: ${(props) => props.theme['base-text']};
     background: ${(props) => props.theme['base-button']};
-    transition: background 0.2s;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
 
     svg {
       width: 1.6rem;
@@ -174,7 +174,13 @@ export const Buttons = styled.div`
     }
 
     &:hover {
+      transform: scale(1.05);
       background: ${(props) => props.theme['base-hover']};
+    }
+
+    &.active {
+      border: 1px solid ${(props) => props.theme['purple']};
+      background: ${(props) => props.theme['purple-light']};
     }
   }
 `
@@ -289,9 +295,15 @@ export const RemoveButton = styled.button`
   transition: background 0.2s;
   color: ${(props) => props.theme["base-text"]};
   background: ${(props) => props.theme["base-button"]};
+  transition: transform .2s ease-in-out;
 
   &:hover {
+    transform: scale(.95);
     background: ${(props) => props.theme["base-hover"]};
+  }
+
+  &:active {
+    transform: scale(1.05);
   }
 
   svg {
@@ -338,8 +350,14 @@ export const ConfirmButton = styled.button`
   border-radius: 6px;
   border: none;
   background: ${(props) => props.theme['yellow']};
+  transition: transform .2s ease-in-out;
 
   &:hover {
+    transform: scale(1.02);
     background: ${(props) => props.theme['yellow-dark']}
+  }
+
+  &:active {
+    transform: scale(.95);
   }
 `
