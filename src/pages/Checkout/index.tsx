@@ -3,6 +3,7 @@ import * as Element from './styles'
 import { useTheme } from 'styled-components'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../contexts/CartContext'
+import { NavLink } from 'react-router-dom'
 
 
 export function Checkout() {
@@ -117,9 +118,14 @@ export function Checkout() {
             <strong>Total <strong>R$ {total.toFixed(2)}</strong></strong>
           </Element.PriceOrder>
 
-          <Element.ConfirmButton>
-            Confirmar Pedido
-          </Element.ConfirmButton>
+          <NavLink 
+            to='/concluido' 
+            style={{ display: 'flex', width: '100%', textDecoration: 'none'}}
+          >
+            <Element.ConfirmButton>
+              Confirmar Pedido
+            </Element.ConfirmButton>
+          </NavLink>
         </Element.ConfirmOrder>
       </Element.Order>
     </Element.Root>
