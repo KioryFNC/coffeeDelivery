@@ -284,6 +284,11 @@ export const QuantityControl = styled.div`
     color: ${(props) => props.theme["purple"]};
     background: transparent;
 
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     &:hover {
       transform: scale(.95);
     }
