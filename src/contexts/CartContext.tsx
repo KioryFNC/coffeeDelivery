@@ -14,6 +14,9 @@ interface CartContextData {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void; 
   cartQuantity: number;
+  clearCart: () => void;
 }
+
+
 
 export const CartContext = createContext({} as CartContextData)

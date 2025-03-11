@@ -8,12 +8,40 @@ import { NavLink } from 'react-router-dom'
 
 export function Checkout() {
   const theme = useTheme()
-  const { cart, removeFromCart, updateQuantity } = useContext(CartContext)
+  const { cart, removeFromCart, updateQuantity, clearCart } = useContext(CartContext)
   const [selected, setSelected] = useState<string | null>(null)
 
   const deliveryFee = 3.50
   const subTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
   const total = subTotal + deliveryFee
+
+  const [formData, setFormData] = useState({
+    rua: '',
+    numero: '',
+    bairro: '',
+    cidade: '',
+    uf: '',
+    pagamento: '',
+  })
+
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target
+    setFormData((prev) => ({ ...prev, [name]: value}))
+  }
+
+  function handleConfirmOrder() {
+    const orderDetails = {
+      endereço: `${formData.rua}, ${formData.numero}`,
+      bairro: formData.bairro,
+      cidade: formData.cidade,
+      uf: formData.uf,
+      pagamento: selected,
+    }
+
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails))
+
+    clearCart()
+  }
 
   function handleSelectPayment(method:string) {
     setSelected(method)
@@ -33,15 +61,15 @@ export function Checkout() {
         </Element.AddressHeader>
         <Element.Form>
           <input type='text' placeholder='CEP'/>
-          <input type='text' placeholder='Rua'/>
+          <input type='text' name='rua' placeholder='Rua' onChange={handleInputChange}/>
           <div>
-            <input type='text' placeholder='Número'/>
+            <input type='text' name='numero' placeholder='Número' onChange={handleInputChange}/>
             <input type='text' placeholder='Complemento (Opcional)'/>
           </div>
           <div>
-            <input type='text' placeholder='Baírro'/>
-            <input type='text' placeholder='Cídade'/>
-            <input type='text' placeholder='UF'/>
+            <input type='text' name='bairro' placeholder='Baírro' onChange={handleInputChange}/>
+            <input type='text' name='cidade' placeholder='Cídade' onChange={handleInputChange}/>
+            <input type='text' name='uf' placeholder='UF' onChange={handleInputChange}/>
           </div>
         </Element.Form>
         </Element.Address>
@@ -56,20 +84,20 @@ export function Checkout() {
           </Element.PaymentHeader>
           <Element.Buttons>
             <button
-              onClick={() => handleSelectPayment('credit')}
-              className={selected === 'credit' ? 'active' : ''}
+              onClick={() => handleSelectPayment('Cartão de crédito')}
+              className={selected === 'Cartão de crédito' ? 'active' : ''}
             >
               <CreditCard color={theme['purple']}/> Cartão de crédito
             </button>
             <button
-              onClick={() => handleSelectPayment('debit')}
-              className={selected === 'debit' ? 'active' : ''}
+              onClick={() => handleSelectPayment('cartão de débito')}
+              className={selected === 'cartão de débito' ? 'active' : ''}
             >
               <Bank color={theme['purple']}/> cartão de débito
             </button>
             <button
-              onClick={() => handleSelectPayment('cash')}
-              className={selected === 'cash' ? 'active' : ''}
+              onClick={() => handleSelectPayment('dinheiro')}
+              className={selected === 'dinheiro' ? 'active' : ''}
             >
               <Money color={theme['purple']}/> dinheiro
             </button>
@@ -119,7 +147,8 @@ export function Checkout() {
           </Element.PriceOrder>
 
           <NavLink 
-            to='/concluido' 
+            to='/concluido'
+            onClick={handleConfirmOrder}
             style={{ display: 'flex', width: '100%', textDecoration: 'none'}}
           >
             <Element.ConfirmButton>
