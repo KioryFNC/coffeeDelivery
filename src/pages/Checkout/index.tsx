@@ -24,6 +24,14 @@ export function Checkout() {
     pagamento: '',
   })
 
+  const isFormValid =
+    formData.rua.trim() !== '' &&
+    formData.numero.trim() !== '' &&
+    formData.bairro.trim() !== '' &&
+    formData.cidade.trim() !== '' &&
+    formData.uf.trim() !== '' &&
+    selected !== null && cart.length > 0;
+
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value}))
@@ -147,8 +155,8 @@ export function Checkout() {
           </Element.PriceOrder>
 
           <NavLink 
-            to='/concluido'
-            onClick={handleConfirmOrder}
+            to={isFormValid ? '/concluido' : '#'}
+            onClick={isFormValid ? handleConfirmOrder : undefined}
             style={{ display: 'flex', width: '100%', textDecoration: 'none'}}
           >
             <Element.ConfirmButton>
