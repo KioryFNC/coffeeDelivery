@@ -40,7 +40,7 @@ export const Details = styled.div`
   padding: 4rem;
   border-radius: 6px 36px;
   background: ${(props) => props.theme['background']};
-
+  
   &::before {
     content: "";
     position: absolute;
@@ -78,14 +78,8 @@ export const Details = styled.div`
     border-radius: 50%;
   }
 
-  > span > div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-  }
-
   > span > div:nth-child(2) strong {
-    display: block;
+    display: inline;
     font-weight: 800;
   }
   

@@ -13,11 +13,13 @@ export function Success() {
   })
 
   useEffect(() => {
-    const storedData = localStorage.getItem('orderDetails')
+    const storedData = localStorage.getItem('orderDetails');
     if (storedData) {
-      setOrderDetails(JSON.parse(storedData))
+      const parsedData = JSON.parse(storedData);
+      console.log('Dados recuperados do localStorage:', parsedData); // Verifique se os dados estão sendo recuperados corretamente
+      setOrderDetails(parsedData);
     }
-  }, [])
+  }, []);
 
   return (
     <Element.Root>
@@ -32,7 +34,8 @@ export function Success() {
       <MapPin color='white' weight='fill'/>
     </div>
     <div>
-      Entrega em <strong>{orderDetails.endereco}</strong> <span>{orderDetails.bairro} - {orderDetails.cidade}, {orderDetails.uf}</span>
+      Entrega em <strong>{orderDetails.endereco}</strong>
+      <span>{orderDetails.bairro} - {orderDetails.cidade}, {orderDetails.uf}</span>
     </div>
   </span>  
   <span>
@@ -40,7 +43,8 @@ export function Success() {
       <Timer color='white' weight='fill'/>
     </div>
     <div>
-      Previsão de entrega <strong><span>20 min - 30 min</span></strong>
+      Previsão de entrega 
+      <strong><span>20 min - 30 min</span></strong>
     </div>
   </span>  
   <span>
@@ -48,7 +52,8 @@ export function Success() {
       <CurrencyDollar color='white' weight='fill'/>
     </div>
     <div>
-      Pagamento na entrega <strong><span>{orderDetails.pagamento}</span></strong>
+      Pagamento na entrega 
+      <strong><span>{orderDetails.pagamento}</span></strong>
     </div>
   </span>  
 </Element.Details>

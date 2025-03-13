@@ -39,16 +39,16 @@ export function Checkout() {
 
   function handleConfirmOrder() {
     const orderDetails = {
-      endereço: `${formData.rua}, ${formData.numero}`,
+      endereco: `${formData.rua}, ${formData.numero}`,
       bairro: formData.bairro,
       cidade: formData.cidade,
       uf: formData.uf,
       pagamento: selected,
-    }
-
-    localStorage.setItem('orderDetails', JSON.stringify(orderDetails))
-
-    clearCart()
+    };
+  
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+  
+    clearCart();
   }
 
   function handleSelectPayment(method:string) {
