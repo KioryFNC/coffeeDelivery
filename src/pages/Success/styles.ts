@@ -62,17 +62,47 @@ export const Details = styled.div`
   }
 
   > span {
-    font-size: 1.6rem;
+    display: flex;
+    align-items: flex-start;
     line-height: 130%;
+    gap: 1.2rem;
+    font-size: 1.6rem;
     color: ${(props) => props.theme['base-text']};
+  }
 
-    strong {
-      font-weight: 700;
-    }
+  > span > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem;
+    border-radius: 50%;
+  }
 
-    span {
-      display: block;
-    }
+  > span > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+
+  > span > div:nth-child(2) strong {
+    display: block;
+    font-weight: 800;
+  }
+  
+  > span > div:nth-child(2) span {
+    display: block;
+  }
+
+  > span:nth-child(1) > div:first-child {
+    background: ${(props) => props.theme['purple']}; /* Cor para o primeiro ícone */
+  }
+
+  > span:nth-child(2) > div:first-child {
+    background: ${(props) => props.theme['yellow']}; /* Cor para o segundo ícone */
+  }
+
+  > span:nth-child(3) > div:first-child {
+    background: ${(props) => props.theme['yellow-dark']}; /* Cor para o terceiro ícone */
   }
 `
 

@@ -17,7 +17,7 @@ export function Header() {
       </NavLink>
 
       <Element.Actions>
-        <span><MapPin /> Porto Alegre, RS</span>
+        <span><MapPin color={theme['purple']} weight='fill'/> Porto Alegre, RS</span>
         <NavLink to='/carrinho' style={{ position: 'relative'}}>
           <ShoppingCart color={theme['yellow-dark']} weight='fill'/>
           {cartQuantity > 0 && (
