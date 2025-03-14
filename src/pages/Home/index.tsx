@@ -26,7 +26,7 @@ export function Home() {
         <Element.Cards>
           <Card
             id="1"
-            image="/public/images/CoffeeExpresso.png"
+            image="/images/CoffeeExpresso.png"
             tags={["Tradicional"]}
             title="Expresso Tradicional"
             description="O tradicional café feito com água quente e grãos moídos"
