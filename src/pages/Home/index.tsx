@@ -26,7 +26,7 @@ export function Home() {
         <Element.Cards>
           <Card
             id="1"
-            image="/src/assets/CoffeeExpresso.png"
+            image="/public/images/CoffeeExpresso.png"
             tags={["Tradicional"]}
             title="Expresso Tradicional"
             description="O tradicional café feito com água quente e grãos moídos"
@@ -34,7 +34,7 @@ export function Home() {
           />
           <Card
             id="2"
-            image="/src/assets/CoffeeAmericano.png"
+            image="/public/images/CoffeeAmericano.png"
             tags={["Tradicional"]}
             title="Expresso Americano"
             description="Expresso diluído, menos intenso que o tradicional"
@@ -42,7 +42,7 @@ export function Home() {
           />
           <Card
             id="3"
-            image="/src/assets/CoffeeExpressoCremoso.png"
+            image="/public/images/CoffeeExpressoCremoso.png"
             tags={["Tradicional"]}
             title="Expresso Cremoso"
             description="Café expresso tradicional com espuma cremosa"
@@ -50,7 +50,7 @@ export function Home() {
           />
           <Card
             id="4"
-            image="/src/assets/CoffeeCaféGelado.png"
+            image="/public/images/CoffeeCaféGelado.png"
             tags={["Tradicional", "Gelado"]}
             title="Expresso Gelado"
             description="Bebida preparada com café expresso e cubos de gelo"
@@ -58,7 +58,7 @@ export function Home() {
           />
           <Card
             id="5"
-            image="/src/assets/CoffeeCaféComLeite.png"
+            image="/public/images/CoffeeCaféComLeite.png"
             tags={["Tradicional", "com leite"]}
             title="Café com Leite"
             description="Meio a meio de expresso tradicional com leite vaporizado"
@@ -66,7 +66,7 @@ export function Home() {
           />
           <Card
             id="6"
-            image="/src/assets/CoffeeLatte.png"
+            image="/public/images/CoffeeLatte.png"
             tags={["Tradicional", "com leite"]}
             title="Latte"
             description="Uma dose de café expresso com o dobro de leite e espuma cremosa"
@@ -74,7 +74,7 @@ export function Home() {
           />
           <Card
             id="7"
-            image="/src/assets/CoffeeCapuccino.png"
+            image="/public/images/CoffeeCapuccino.png"
             tags={["Tradicional", "com leite"]}
             title="Capuccino"
             description="Bebida com canela feita de doses iguais de café, leite e espuma"
@@ -82,7 +82,7 @@ export function Home() {
           />
           <Card
             id="8"
-            image="/src/assets/CoffeeMacchiato.png"
+            image="/public/images/CoffeeMacchiato.png"
             tags={["Tradicional", "com leite"]}
             title="Macchiato"
             description="Café expresso misturado com um pouco de leite quente e espuma"
@@ -90,7 +90,7 @@ export function Home() {
           />
           <Card
             id="9"
-            image="/src/assets/CoffeeMochaccino.png"
+            image="/public/images/CoffeeMochaccino.png"
             tags={["Tradicional", "com leite"]}
             title="Mocaccino"
             description="O tradicional café feito com água quente e grãos moídos"
@@ -98,7 +98,7 @@ export function Home() {
           />
           <Card
             id="10"
-            image="/src/assets/CoffeeChocolateQuente.png"
+            image="/public/images/CoffeeChocolateQuente.png"
             tags={["Especial", "Tradicional"]}
             title="Chocolate Quente"
             description="Bebida feita com chocolate dissolvido no leite quente e café"
@@ -106,7 +106,7 @@ export function Home() {
           />
           <Card
             id="11"
-            image="/src/assets/CoffeeCubano.png"
+            image="/public/images/CoffeeCubano.png"
             tags={["especial", "Alcoólico", "gelado"]}
             title="Cubano"
             description="Drink gelado de café expresso com rum, creme de leite e hortelã"
@@ -114,7 +114,7 @@ export function Home() {
           />
           <Card
             id="12"
-            image="/src/assets/CoffeeHavaiano.png"
+            image="/public/images/CoffeeHavaiano.png"
             tags={["especial"]}
             title="Havaiano"
             description="Bebida adocicada preparada com café e leite de coco"
@@ -122,7 +122,7 @@ export function Home() {
           />
           <Card
             id="13"
-            image="/src/assets/CoffeeÁrabe.png"
+            image="/public/images/CoffeeÁrabe.png"
             tags={["especial"]}
             title="Árabe"
             description="Bebida preparada com grãos de café árabe e especiarias"
@@ -130,7 +130,7 @@ export function Home() {
           />
           <Card
             id="14"
-            image="/src/assets/CoffeeIrlandês.png"
+            image="/public/images/CoffeeIrlandês.png"
             tags={["especial", "Alcoólico"]}
             title="Irlandês"
             description="Bebida a base de café, uísque irlandês, açúcar e chantilly"

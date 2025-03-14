@@ -70,6 +70,4 @@ export const CartBadge = styled.span`
   color: white !important;
   background: ${(props) => props.theme['yellow-dark']} !important;
   cursor: pointer;
-
-  
 `
