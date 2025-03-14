@@ -66,25 +66,3 @@ export function Success() {
   )
 }
 
-{/* 
-  <Element.Details>
-    <span>
-      <div>
-        <MapPin color='white' weight='fill'/>
-      </div>
-      Entrega em <strong>{orderDetails.endereco}</strong> <span>{orderDetails.bairro} - {orderDetails.cidade}, {orderDetails.uf}</span>
-    </span>  
-    <span>
-      <div>
-        <Timer color='white' weight='fill'/>
-      </div>
-      Previsão de entrega <strong><span>20 min - 30 min</span></strong>
-    </span>  
-    <span>
-      <div>
-        <CurrencyDollar color='white' weight='fill'/>
-      </div>
-      Pagamento na entrega <strong> <span>{orderDetails.pagamento}</span></strong>
-    </span>  
-  </Element.Details> 
-  */}

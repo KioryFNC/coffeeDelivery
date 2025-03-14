@@ -92,16 +92,16 @@ export function Checkout() {
           </Element.PaymentHeader>
           <Element.Buttons>
             <button
-              onClick={() => handleSelectPayment('Cartão de crédito')}
-              className={selected === 'Cartão de Crédito' ? 'active' : ''}
+              onClick={() => handleSelectPayment('cartão de crédito')}
+              className={selected === 'cartão de crédito' ? 'active' : ''}
             >
-              <CreditCard color={theme['purple']}/> Cartão de crédito
+              <CreditCard color={theme['purple']}/> Cartão de Crédito
             </button>
             <button
               onClick={() => handleSelectPayment('cartão de débito')}
-              className={selected === 'Cartão de Débito' ? 'active' : ''}
+              className={selected === 'cartão de débito' ? 'active' : ''}
             >
-              <Bank color={theme['purple']}/> cartão de débito
+              <Bank color={theme['purple']}/> Cartão de Débito
             </button>
             <button
               onClick={() => handleSelectPayment('dinheiro')}
