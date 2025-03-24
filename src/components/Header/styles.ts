@@ -11,12 +11,11 @@ export const Root = styled.div`
   @media (max-width: 600px) {
     padding: 1.6rem 5rem;
     margin-bottom: 4rem;
+    gap: 1rem;
   }
 `
 
-export const Logo = styled.div`
-  display: flex;
-`
+
 
 export const Actions = styled.div`
   height: 3.8rem;

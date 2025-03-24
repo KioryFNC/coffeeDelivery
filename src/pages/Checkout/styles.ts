@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Root = styled.div`
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -8,6 +9,7 @@ export const Root = styled.div`
 
   @media (max-width: 1100px) {
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
 `
@@ -21,6 +23,10 @@ export const Section = styled.div`
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 130%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `
 
@@ -178,6 +184,8 @@ export const Buttons = styled.div`
 
   > button {
     flex: 1;
+    width: inherit;
+    justify-content: center;
     height: 5.1rem;
     display: flex;
     align-items: center;
@@ -236,6 +244,10 @@ export const Order = styled.div`
     line-height: 130%;
     color: ${(props) => props.theme['base-subtitle']};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 export const ConfirmOrder = styled.div`
   position: relative;
@@ -249,6 +261,9 @@ export const ConfirmOrder = styled.div`
   border-radius: 6px 44px;
   background: ${(props) => props.theme['base-card']};
   overflow: hidden;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const CoffeeList = styled.div`
