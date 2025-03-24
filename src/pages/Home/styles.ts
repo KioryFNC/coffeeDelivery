@@ -14,7 +14,7 @@ export const Banner = styled.div`
   margin-bottom: 9.2rem;
 
   @media (max-width: 1300px) {
-    margin-top: 3rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     img {
@@ -23,6 +23,7 @@ export const Banner = styled.div`
   }
 
   @media (max-width: 768px) {
+    margin-top: 5rem;
     img {
       width: 25rem;
     }
@@ -164,7 +165,11 @@ export const Content = styled.div`
     margin-top: 3rem;
     color: ${(props) => props.theme['base-subtitle']};
   }
-`
+
+  @media (max-width: 680px) {
+    align-items: center;
+  }
+  `
 
 export const Cards = styled.div`
   width: 100%;
@@ -175,12 +180,13 @@ export const Cards = styled.div`
   @media (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  
   @media (max-width: 680px) {
+    justify-items: center;
     grid-template-columns: repeat(1, 1fr);
   }
 `
