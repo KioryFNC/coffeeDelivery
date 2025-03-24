@@ -7,6 +7,11 @@ export const Root = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 3.2rem 16rem;
+
+  @media (max-width: 600px) {
+    padding: 1.6rem 5rem;
+    margin-bottom: 4rem;
+  }
 `
 
 export const Logo = styled.div`
@@ -51,6 +56,13 @@ export const Actions = styled.div`
       width: 2.2rem;
       height: 2.2rem;
     }
+  }
+
+  @media (max-width: 600px) {
+    span {
+      font-size: 1.2rem;
+    }
+
   }
 `
 
