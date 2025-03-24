@@ -5,12 +5,18 @@ export const Root = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 3.2rem;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
   > h2 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -27,6 +33,10 @@ export const Address = styled.div`
   border-radius: 6px 44px;
   background: ${(props) => props.theme["base-card"]};
 
+  @media (max-width: 768px) {
+    padding: 2rem;
+    gap: 2rem;
+  }
 `
 
 export const AddressHeader = styled.div`
@@ -108,6 +118,16 @@ export const Form = styled.div`
   div:nth-of-type(2) input:nth-child(3) {
     grid-column: span 1;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    input {
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
+  }
 `;
 
 export const Payment = styled.div`
@@ -118,6 +138,11 @@ export const Payment = styled.div`
   padding: 4rem;
   border-radius: 6px;
   background: ${(props) => props.theme['base-card']};
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    gap: 2rem;
+  }
 `
 
 export const PaymentHeader = styled.div`
@@ -184,6 +209,19 @@ export const Buttons = styled.div`
       background: ${(props) => props.theme['purple-light']};
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    > button {
+      height: 4.5rem;
+      font-size: 1rem;
+      padding: 1.2rem;
+    }
+  }
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
 `
 
 export const Order = styled.div`
@@ -218,6 +256,10 @@ export const CoffeeList = styled.div`
   max-height: 30rem;
   overflow-y: auto;
   padding-right: .8rem;
+
+  @media (max-width: 768px) {
+    max-height: 20rem;
+  }
 `
 
 export const CoffeeItem = styled.div`
@@ -264,6 +306,21 @@ export const CoffeeItem = styled.div`
     font-weight: 700;
     color: ${(props) => props.theme['base-text']};
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+    }
+  }
 `
 
 export const QuantityControl = styled.div`
@@ -302,6 +359,10 @@ export const QuantityControl = styled.div`
     font-size: 1.4rem;
     color: ${(props) => props.theme["base-title"]};
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `
 
 export const RemoveButton = styled.button`
@@ -331,6 +392,12 @@ export const RemoveButton = styled.button`
     color: ${(props) => props.theme["purple"]};
     font-size: 1.6rem;
   }
+
+  @media (max-width: 768px) {
+    padding: .6rem 1rem;
+    font-size: 1.2rem;
+    gap: .5rem;
+  }
 `
 
 export const PriceOrder = styled.div`
@@ -354,6 +421,13 @@ export const PriceOrder = styled.div`
     font-size: 2rem;
     font-weight: 700;
     color: ${(props) => props.theme['base-subtitle']};
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    span, strong {
+      font-size: 1.2rem;
+    }
   }
 `
 
@@ -381,5 +455,11 @@ export const ConfirmButton = styled.button`
 
   &:active {
     transform: scale(.95);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    height: 4rem;
+    padding: 1rem;
   }
 `
